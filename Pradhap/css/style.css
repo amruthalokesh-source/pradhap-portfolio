@@ -2295,6 +2295,51 @@ html.skip-initial-loader #loader {
   line-height: 1.55;
 }
 
+.earth-orbit-track .project-slide-info.compact {
+  position: relative;
+  z-index: 2;
+}
+
+.earth-orbit-track .view-more {
+  position: relative;
+  z-index: 20;
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
+/* Project navigation: always visible and clickable */
+.earth-orbit-track .view-more {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 7px;
+  position: relative !important;
+  z-index: 100000 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  color: #4f46e5 !important;
+  font-weight: 700;
+  border: 1px solid rgba(79,70,229,.28);
+  border-radius: 999px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 6px 18px rgba(15,23,42,.10);
+}
+.earth-orbit-track .view-more:hover,
+.earth-orbit-track .view-more:focus-visible {
+  color: #3730a3 !important;
+  background: #fff !important;
+  text-decoration: underline !important;
+  outline: 2px solid rgba(79,70,229,.25);
+  outline-offset: 2px;
+}
+.earth-orbit-track .view-more span {
+  pointer-events: none;
+}
+
+.earth-orbit-track .slider-slide {
+  isolation: isolate;
+}
+
 .earth-orbit-track .view-more {
   margin-top: 13px;
   padding: 8px 14px;
@@ -2304,6 +2349,17 @@ html.skip-initial-loader #loader {
 .earth-orbit-track .slider-slide.is-front .project-slide-content.compact {
   border-color: rgba(99,102,241,.55);
   box-shadow: 0 32px 90px rgba(15,23,42,.24), 0 0 38px rgba(99,102,241,.15), 0 0 0 1px rgba(255,255,255,.7) inset;
+}
+
+
+.earth-orbit-track .slider-slide.is-hovered,
+.earth-orbit-track .slider-slide.is-front {
+  z-index: 10000 !important;
+}
+
+.earth-orbit-track .slider-slide.is-hovered .project-slide-content.compact {
+  position: relative;
+  z-index: 10001;
 }
 
 .earth-orbit-track .slider-slide.is-hovered .project-slide-content.compact {
@@ -2964,5 +3020,70 @@ html.skip-initial-loader #loader {
   #experience .holographic-card:nth-child(2):hover {
     left: 34% !important;
     width: 68% !important;
+  }
+}
+
+/* Ensure each View More control is a real, unobstructed navigation target. */
+.earth-orbit-track .slider-slide .project-slide-info.compact {
+  pointer-events: auto;
+}
+.earth-orbit-track .slider-slide .view-more {
+  position: relative !important;
+  display: inline-flex !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+
+/* Entire Key Project cards are clickable; View More remains an optional link. */
+.earth-orbit-track .slider-slide.project-card-link {
+  cursor: pointer !important;
+}
+.earth-orbit-track .slider-slide.project-card-link .project-slide-content.compact {
+  cursor: pointer !important;
+}
+
+/* ===== KEY PROJECTS — REAL VIEW MORE HIT TARGET =====
+   Keep the button itself as the topmost interactive element of the visible card. */
+.earth-orbit-track .slider-slide .project-slide-info.compact {
+  position: relative !important;
+  z-index: 100 !important;
+  overflow: visible !important;
+}
+
+.earth-orbit-track .slider-slide .view-more {
+  position: relative !important;
+  display: inline-flex !important;
+  z-index: 999999 !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  cursor: pointer !important;
+}
+
+.earth-orbit-track .slider-slide.is-hovered,
+.earth-orbit-track .slider-slide.is-front {
+  isolation: isolate;
+}
+
+/* The visible card is always the interactive layer; hidden orbit cards don't steal clicks. */
+.earth-orbit-track .slider-slide[aria-hidden="true"] {
+  pointer-events: none !important;
+}
+.earth-orbit-track .slider-slide[aria-hidden="false"] {
+  pointer-events: auto !important;
+}
+
+/* ===== FINAL POSITION TUNING =====
+   Key Projects: lift the complete orbit/card group slightly upward. */
+#projects .earth-orbit-container {
+  position: relative;
+  top: -32px;
+}
+
+@media (max-width: 700px) {
+  #projects .earth-orbit-container {
+    top: -20px;
   }
 }

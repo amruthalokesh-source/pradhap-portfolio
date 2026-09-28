@@ -536,6 +536,37 @@
     bind() {
       this.slides.forEach((slide, index) => {
         slide.dataset.projectIndex = index;
+
+        // View More must navigate from the button itself, even though the
+        // project cards are continuously transformed by the 3D orbit.
+        const viewMore = slide.querySelector('.view-more');
+        const projectHref = viewMore?.getAttribute('href');
+        if (viewMore) {
+          // Keep the visible View More control as a normal link.
+          viewMore.addEventListener('pointerdown', (event) => event.stopPropagation());
+        }
+
+        // The entire project card is the navigation target. Clicking anywhere
+        // on the card (image, title, description, empty card area, etc.) opens
+        // that card's corresponding project page. The View More link remains
+        // a normal link and is allowed to handle its own click.
+        if (projectHref) {
+          slide.classList.add('project-card-link');
+          slide.setAttribute('role', 'link');
+          slide.setAttribute('tabindex', '0');
+          slide.setAttribute('aria-label', `Open ${slide.querySelector('h3')?.textContent.trim() || 'project'} details`);
+          slide.addEventListener('click', (event) => {
+            if (event.target.closest('.view-more, a, button, input, textarea, select')) return;
+            window.location.assign(projectHref);
+          });
+          slide.addEventListener('keydown', (event) => {
+            if ((event.key === 'Enter' || event.key === ' ') && !event.target.closest('.view-more, a, button, input, textarea, select')) {
+              event.preventDefault();
+              window.location.assign(projectHref);
+            }
+          });
+        }
+
         slide.addEventListener('mouseenter', () => this.focusCard(index));
         slide.addEventListener('mouseleave', () => {
           this.hovered = null;
@@ -732,6 +763,10 @@
     const domain = 'gmail.com';
     emailDisplay.textContent = user + '@' + domain;
   }
+
+  // ===== PROJECT VIEW-MORE NAVIGATION =====
+  // View More uses normal same-tab anchors. No global click interception is used,
+  // so the browser handles navigation directly from each project card.
 
   // ===== INITIALIZE SLIDER =====
   document.addEventListener('DOMContentLoaded', function() {

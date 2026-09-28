@@ -9,3 +9,17 @@
 @media(max-width:1050px){.story-section{width:min(500px,43vw)}.story-section.left{left:1.5%}.story-section.right{right:1.5%}.drone-cursor{width:190px;height:124px}}
 @media(max-width:850px){.flight-story{min-height:0;padding:70px 0}.flight-stage{height:auto;width:92vw}.flight-path{display:none}.story-section,.story-section:nth-of-type(n){position:relative;top:auto;left:auto;right:auto;width:100%;min-height:auto;margin:0 0 14vh;opacity:1;transform:none}.story-section-inner,.story-section.right .story-section-inner{border-left:2px solid rgba(43,110,243,.55);border-right:0;text-align:left;padding:24px 24px;background:linear-gradient(90deg,rgba(255,255,255,.7),rgba(255,255,255,0));border-radius:0 16px 16px 0}.application-list{justify-content:flex-start}.story-section.right .story-list li:after{content:""}.story-list li:before{content:"↗"}.drone-cursor{display:none}.project-navigation{flex-direction:row;justify-content:space-between;padding:20px 18px 28px}.project-nav-button.next-project{text-align:center;align-items:center}.hero{min-height:88svh;padding:120px 28px 70px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.story-section{transition:none}.drone-cursor .rotor{animation:none}}
+
+/* ===== FINAL PROJECT PAGE NAVIGATION POSITION =====
+   Move Previous / Next controls slightly lower on every project page. */
+.project-navigation {
+  padding-top: 52px;
+  padding-bottom: 44px;
+}
+
+@media (max-width: 850px) {
+  .project-navigation {
+    padding-top: 42px;
+    padding-bottom: 36px;
+  }
+}
