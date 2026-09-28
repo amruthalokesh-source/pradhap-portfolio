@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#56ccf2"/><stop offset="1" stop-color="#2f80ed"/></linearGradient></defs>
+<g fill="none" stroke="url(#g)" stroke-width="7" stroke-linecap="round">
+<path d="M250 185 L340 145 L560 145 L650 185 L560 225 L340 225 Z"/>
+<path d="M340 160 L230 105 M560 160 L670 105 M340 210 L230 265 M560 210 L670 265"/>
+<ellipse cx="210" cy="100" rx="70" ry="12"/><ellipse cx="690" cy="100" rx="70" ry="12"/>
+<ellipse cx="210" cy="270" rx="70" ry="12"/><ellipse cx="690" cy="270" rx="70" ry="12"/>
+<path d="M410 145 L450 105 L490 145 M410 225 L450 265 L490 225"/>
+</g>
+<circle cx="450" cy="185" r="16" fill="#fff"/>
+</svg>

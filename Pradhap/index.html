@@ -10,7 +10,17 @@
   <meta property="og:description" content="Aeronautical Engineer specializing in UAV system architecture, aerodynamic design, and regulatory certification.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:url" content="https://pradhap.dev">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pradhap V - Aeronautical Engineer | UAV R&D Portfolio">
+  <meta name="twitter:description" content="Aeronautical Engineer specializing in UAV system architecture, aerodynamic design, and regulatory certification.">
+  
   <title>Pradhap V · Aeronautical Engineer | UAV R&D Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,20 +32,70 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+  <script>if (window.location.hash === '#projects') document.documentElement.classList.add('skip-initial-loader');</script>
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pradhap V",
+    "jobTitle": "Aeronautical Engineer",
+    "url": "https://pradhap.dev",
+    "email": "veerapradhap@gmail.com",
+    "telephone": "+918531858271",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Coimbatore",
+      "addressCountry": "India"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/pradhap-v",
+      "https://www.instagram.com/pradhap._.01",
+      "https://www.reddit.com/user/Pradhap_01"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Recnaile Pvt Ltd"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Park College of Engineering and Technology"
+    }
+  }
+  </script>
 </head>
-<body>
-  <!-- Loading Animation -->
-  <div id="loader">
-    <div class="loader-spinner"></div>
+<body class="is-loading">
+  <script>if (document.documentElement.classList.contains('skip-initial-loader')) document.body.classList.remove('is-loading');</script>
+  <!-- 3D Drone Loading Experience -->
+  <div id="loader" role="status" aria-label="Loading portfolio">
+    <div class="loader-aura" aria-hidden="true"></div>
+    <canvas id="drone-loader-canvas" aria-hidden="true"></canvas>
+    <div class="loader-overlay-copy">
+      <span class="loader-kicker">AEROSPACE SYSTEMS</span>
+      <span class="loader-status">INITIALIZING FLIGHT SYSTEMS</span>
+      <span class="loader-progress" aria-hidden="true"><span></span></span>
+    </div>
+    <noscript>Loading portfolio…</noscript>
   </div>
 
   <!-- Skip to Content Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+  
+  <!-- Glow Rings -->
+  <div class="glow-ring-container" aria-hidden="true">
+    <div class="glow-ring"></div>
+    <div class="glow-ring"></div>
+    <div class="glow-ring"></div>
+  </div>
+
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container nav-container">
-      <div class="logo">Pradhap V</div>
+      <div class="logo" aria-label="Pradhap V Logo">Pradhap V</div>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <i class="fas fa-bars"></i>
       </button>
@@ -52,10 +112,12 @@
 
   <main id="main-content">
     <!-- Hero Section -->
-    <div class="container hero">
-      <div class="hero-grid">
+    <section class="hero" aria-label="Hero introduction">
+      <div class="container hero-grid">
         <div class="hero-content">
-          <div class="hero-badge"><i class="fas fa-rocket"></i> Research and Development Engineer (UAV) | Business Development | Type Certification Specialist</div>
+          <div class="hero-badge">
+            <i class="fas fa-rocket"></i> Research and Development Engineer (UAV) | Business Development | Type Certification Specialist
+          </div>
           <h1 class="hero-title">Pradhap V<br><span>Aeronautical Engineer</span></h1>
           <p class="hero-desc">Specializing in UAV system architecture, aerodynamic design, and regulatory certification. Driving innovation from concept to mission-ready drones.</p>
           <div class="info-badge">
@@ -69,24 +131,22 @@
           </div>
         </div>
         <div class="hero-visual">
-          <div class="profile-vertical">
-            <img class="profile-vertical-img" src="assets/images/profile.jpg" alt="Pradhap V - Aeronautical Engineer" loading="lazy" onerror="this.src='https://via.placeholder.com/400x500?text=Pradhap+V'">
+          <div class="profile-vertical glass" style="border: 3px solid rgba(99,102,241,0.3);">
+            <img class="profile-vertical-img" src="assets/images/photo.jpeg" alt="Pradhap V - Aeronautical Engineer" loading="lazy" onerror="this.src='https://via.placeholder.com/400x500/6366f1/ffffff?text=Pradhap+V'">
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Core Skills -->
-    <div class="container section-spacer">
-      <div class="skills-grid">
-        <div class="skill-card"><i class="fas fa-cube"></i> SolidWorks / Fusion 360</div>
-        <div class="skill-card"><i class="fas fa-chart-bar"></i> Ansys</div>
-        <div class="skill-card"><i class="fas fa-bullhorn"></i> Business Development</div>
-        <div class="skill-card"><i class="fas fa-check-double"></i> DGCA Type Certification</div>
-        <div class="skill-card"><i class="fas fa-rocket"></i> Prototype & Product Development</div>
-        <div class="skill-card"><i class="fas fa-microchip"></i> End to End Product Development & Strategic Analysis</div>
+      <div class="container hero-skills">
+        <div class="skills-grid">
+          <div class="skill-card"><i class="fas fa-cube"></i> SolidWorks / Fusion 360</div>
+          <div class="skill-card"><i class="fas fa-chart-bar"></i> Ansys</div>
+          <div class="skill-card"><i class="fas fa-bullhorn"></i> Business Development</div>
+          <div class="skill-card"><i class="fas fa-check-double"></i> DGCA Type Certification</div>
+          <div class="skill-card"><i class="fas fa-rocket"></i> Prototype & Product Development</div>
+          <div class="skill-card"><i class="fas fa-microchip"></i> End to End Product Development & Strategic Analysis</div>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="section">
@@ -98,7 +158,7 @@
             <p>Possess strong hands-on experience in developing innovative drone solutions for commercial, industrial, defense, and government applications. Proven capability in managing complex engineering projects while ensuring compliance with regulatory requirements, including successful execution of DGCA Type Certification processes.</p>
             <p>Beyond technical development, experienced in driving business growth through strategic planning, market analysis, government tenders, grant acquisition, funding programs, stakeholder engagement, and partnership development. Adept at identifying emerging opportunities and transforming innovative ideas into scalable products and sustainable business ventures.</p>
             <p>Known for leading cross-functional teams, solving complex engineering challenges, and delivering reliable aerospace solutions that create real-world impact. Committed to advancing the UAV industry through innovation, operational excellence, and continuous learning, supported by both industry experience and advanced academic pursuits in aerospace engineering.</p>
-            <div class="about-highlight">
+            <div class="about-highlight glass">
               <i class="fas fa-quote-left" style="color: var(--primary); margin-right: 10px;"></i> 
               My goal is to shape the future of autonomous flight — creating UAVs that are smarter, safer, and scalable for next-generation aerospace challenges.
             </div>
@@ -107,9 +167,21 @@
             </button>
           </div>
           <div class="about-stats">
-            <div class="stat-card"><div class="stat-number">7+</div><div>UAV Platforms</div><small>Developed</small></div>
-            <div class="stat-card"><div class="stat-number">2</div><div>Type Certifications</div><small>DGCA Approved</small></div>
-            <div class="stat-card"><div class="stat-number">3+</div><div>Years R&D</div><small>Aerospace</small></div>
+            <div class="stat-card glass">
+              <div class="stat-number">7+</div>
+              <div>UAV Platforms</div>
+              <small>Developed</small>
+            </div>
+            <div class="stat-card glass">
+              <div class="stat-number">2</div>
+              <div>Type Certifications</div>
+              <small>DGCA Approved</small>
+            </div>
+            <div class="stat-card glass">
+              <div class="stat-number">3+</div>
+              <div>Years R&D</div>
+              <small>Aerospace</small>
+            </div>
           </div>
         </div>
       </div>
@@ -118,21 +190,20 @@
     <!-- Work Experience Section -->
     <section id="experience" class="section">
       <div class="container" style="position: relative;">
-        <div class="digital-grid-bg"></div>
+        <div class="digital-grid-bg" aria-hidden="true"></div>
         
         <h2 class="section-title">Work Experience</h2>
         <div class="section-subhead">Leading R&D and UAV design across defence, agriculture and logistics.</div>
         
         <div class="holographic-timeline">
           <!-- Card 1 -->
-          <div class="holographic-card" data-depth="0.05">
-            <div class="glass-shine"></div>
-            <div class="card-border-glow"></div>
+          <div class="holographic-card glass-border-glow">
+            <div class="glass-shine" aria-hidden="true"></div>
             
             <div class="holographic-card-inner">
               <div class="timeline-header">
                 <div class="timeline-role depth-layer depth-layer-2">
-                  <span class="floating-icon">🚀</span> Lead R&D Engineer & Business Development
+                  <span class="floating-icon" aria-hidden="true">🚀</span> Lead R&D Engineer & Business Development
                 </div>
                 <div class="timeline-date-badge depth-layer depth-layer-1">
                   <i class="far fa-calendar-alt"></i> Aug '25 – Present
@@ -156,14 +227,13 @@
           </div>
 
           <!-- Card 2 -->
-          <div class="holographic-card" data-depth="0.05">
-            <div class="glass-shine"></div>
-            <div class="card-border-glow"></div>
+          <div class="holographic-card glass-border-glow">
+            <div class="glass-shine" aria-hidden="true"></div>
             
             <div class="holographic-card-inner">
               <div class="timeline-header">
                 <div class="timeline-role depth-layer depth-layer-2">
-                  <span class="floating-icon">✈️</span> Design and Development Engineer
+                  <span class="floating-icon" aria-hidden="true">✈️</span> Design and Development Engineer
                 </div>
                 <div class="timeline-date-badge depth-layer depth-layer-1">
                   <i class="far fa-calendar-alt"></i> Oct '24 – Sept '25
@@ -187,14 +257,13 @@
           </div>
 
           <!-- Card 3 -->
-          <div class="holographic-card" data-depth="0.05">
-            <div class="glass-shine"></div>
-            <div class="card-border-glow"></div>
+          <div class="holographic-card glass-border-glow">
+            <div class="glass-shine" aria-hidden="true"></div>
             
             <div class="holographic-card-inner">
               <div class="timeline-header">
                 <div class="timeline-role depth-layer depth-layer-2">
-                  <span class="floating-icon">🏅</span> Junior Design & Type Certification Engineer
+                  <span class="floating-icon" aria-hidden="true">🏅</span> Junior Design & Type Certification Engineer
                 </div>
                 <div class="timeline-date-badge depth-layer depth-layer-1">
                   <i class="far fa-calendar-alt"></i> Jan '24 – Oct '24
@@ -230,7 +299,7 @@
           <!-- Internship Card 1 -->
           <div class="internship-card redesigned">
             <div class="internship-card-inner">
-              <div class="internship-card-front redesigned">
+              <div class="internship-card-front redesigned glass">
                 <div class="internship-header">
                   <div class="intern-badge redesigned">
                     <i class="fas fa-graduation-cap"></i> Intern
@@ -256,7 +325,7 @@
                     </div>
                     <div class="visual-progress">
                       <div class="progress-ring">
-                        <svg viewBox="0 0 36 36" class="circular-chart">
+                        <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
                           <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                           <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                           <text x="18" y="20.35" class="percentage">85%</text>
@@ -267,7 +336,7 @@
                 </div>
               </div>
               
-              <div class="internship-card-back redesigned">
+              <div class="internship-card-back redesigned glass">
                 <div class="intern-badge back-badge">
                   <i class="fas fa-flask"></i> Details
                 </div>
@@ -288,7 +357,7 @@
           <!-- Internship Card 2 -->
           <div class="internship-card redesigned">
             <div class="internship-card-inner">
-              <div class="internship-card-front redesigned">
+              <div class="internship-card-front redesigned glass">
                 <div class="internship-header">
                   <div class="intern-badge redesigned research">
                     <i class="fas fa-flask"></i> Research Intern
@@ -314,7 +383,7 @@
                     </div>
                     <div class="visual-progress">
                       <div class="progress-ring">
-                        <svg viewBox="0 0 36 36" class="circular-chart">
+                        <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
                           <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                           <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                           <text x="18" y="20.35" class="percentage">90%</text>
@@ -325,7 +394,7 @@
                 </div>
               </div>
               
-              <div class="internship-card-back redesigned">
+              <div class="internship-card-back redesigned glass">
                 <div class="intern-badge back-badge">
                   <i class="fas fa-rocket"></i> Details
                 </div>
@@ -352,20 +421,21 @@
         <h2 class="section-title">Key Projects</h2>
         <div class="section-subhead">Mission-ready UAV systems and advanced aeronautical designs.</div>
 
-        <div class="project-slider-container">
-          <div class="project-slider compact">
+        <div class="project-slider-container earth-orbit-container">
+          <div class="earth-orbit-projects">
             
-            <div class="slider-track">
+            <div class="slider-track earth-orbit-track" aria-label="Key project cards">
               <!-- Slide 1 - Kamikaze Drone -->
-              <div class="slider-slide active">
+              <div class="slider-slide">
                 <div class="project-slide-content compact">
                   <div class="project-slide-image compact">
-                    <img src="assets/images/kamikaze-drone.png" alt="Kamikaze Drone" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=Kamikaze+Drone'">
+                    <img src="assets/images/kamikaze-drone.png" alt="Kamikaze Drone - Defense UAV system" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/6366f1/ffffff?text=Kamikaze+Drone'">
                     <div class="project-slide-badge">Defense</div>
                   </div>
                   <div class="project-slide-info compact">
                     <h3>Kamikaze Drone</h3>
                     <p class="project-description">Worked on the design, integration, and testing of FPV-based loitering munition (kamikaze) drones, focusing on airframe development, payload integration, flight validation, and mission performance for defense applications.</p>
+<a class="view-more" href="pages/projects/kamikaze-drone.html" aria-label="View more about Kamikaze Drone">View More <span aria-hidden="true">→</span></a>
                   </div>
                 </div>
               </div>
@@ -374,12 +444,13 @@
               <div class="slider-slide">
                 <div class="project-slide-content compact">
                   <div class="project-slide-image compact">
-                    <img src="assets/images/canister-drone.png" alt="Canister Dropping Drone" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=Canister+Dropping+Drone'">
+                    <img src="assets/images/canister-drone.png" alt="Canister Dropping Drone - Logistics UAV system" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/ec4899/ffffff?text=Canister+Dropping+Drone'">
                     <div class="project-slide-badge">Logistics</div>
                   </div>
                   <div class="project-slide-info compact">
                     <h3>Canister Dropping Drone</h3>
                     <p class="project-description">Contributed to the design and development of a UAV-based payload delivery platform capable of carrying and releasing mission-specific payloads with precision. Responsibilities included airframe integration, payload release mechanism development, flight testing, system validation, and performance optimization to enhance operational effectiveness and reliability in defense-oriented applications.</p>
+<a class="view-more" href="pages/projects/canister-dropping-drone.html" aria-label="View more about Canister Dropping Drone">View More <span aria-hidden="true">→</span></a>
                   </div>
                 </div>
               </div>
@@ -388,12 +459,13 @@
               <div class="slider-slide">
                 <div class="project-slide-content compact">
                   <div class="project-slide-image compact">
-                    <img src="assets/images/logistics-drone.png" alt="Logistics Drone" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=Logistics+Drone'">
+                    <img src="assets/images/logistics-drone.png" alt="Logistics Drone - Commercial UAV system" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/06b6d4/ffffff?text=Logistics+Drone'">
                     <div class="project-slide-badge">Commercial</div>
                   </div>
                   <div class="project-slide-info compact">
                     <h3>Logistics Drone</h3>
                     <p class="project-description">Worked on the end-to-end development of logistics drones for efficient cargo and payload transportation, covering system design, manufacturing, integration, testing, validation, and operational deployment. Contributed to payload management, flight performance optimization, reliability enhancement, and mission planning to improve range, efficiency, and operational effectiveness for commercial, industrial, and government applications.</p>
+<a class="view-more" href="pages/projects/logistics-drone.html" aria-label="View more about Logistics Drone">View More <span aria-hidden="true">→</span></a>
                   </div>
                 </div>
               </div>
@@ -402,12 +474,13 @@
               <div class="slider-slide">
                 <div class="project-slide-content compact">
                   <div class="project-slide-image compact">
-                    <img src="assets/images/amphibious-uav.png" alt="Amphibious UAV" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=Amphibious+UAV'">
+                    <img src="assets/images/amphibious-uav.png" alt="Amphibious UAV - Maritime drone system" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/f59e0b/ffffff?text=Amphibious+UAV'">
                     <div class="project-slide-badge">Maritime</div>
                   </div>
                   <div class="project-slide-info compact">
                     <h3>Amphibious UAV</h3>
                     <p class="project-description">Contributed to the design and development of an amphibious UAV capable of operating in both air and water environments. Involved in airframe design, buoyancy integration, system testing, and performance validation to enhance versatility for surveillance, inspection, search-and-rescue, and maritime applications.</p>
+<a class="view-more" href="pages/projects/amphibious-uav.html" aria-label="View more about Amphibious UAV">View More <span aria-hidden="true">→</span></a>
                   </div>
                 </div>
               </div>
@@ -416,12 +489,13 @@
               <div class="slider-slide">
                 <div class="project-slide-content compact">
                   <div class="project-slide-image compact">
-                    <img src="assets/images/fireball-drone.png" alt="Fireball Dropping Drone" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=Fireball+Dropping+Drone'">
+                    <img src="assets/images/fireball-drone.png" alt="Fireball Dropping Drone - Aerial UAV system" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/10b981/ffffff?text=Fireball+Dropping+Drone'">
                     <div class="project-slide-badge">Aerial</div>
                   </div>
                   <div class="project-slide-info compact">
                     <h3>Fireball Dropping Drone</h3>
                     <p class="project-description">Contributed to the design and development of a UAV-based aerial payload deployment platform, focusing on payload integration, release mechanisms, flight testing, and system validation. Worked on improving operational reliability, precision deployment capabilities, and overall mission performance for specialized aerial applications.</p>
+<a class="view-more" href="pages/projects/fireball-dropping-drone.html" aria-label="View more about Fireball Dropping Drone">View More <span aria-hidden="true">→</span></a>
                   </div>
                 </div>
               </div>
@@ -430,12 +504,13 @@
               <div class="slider-slide">
                 <div class="project-slide-content compact">
                   <div class="project-slide-image compact">
-                    <img src="assets/images/surveillance-drone.jpg" alt="Surveillance Drone" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=Surveillance+Drone'">
+                    <img src="assets/images/surveillance-drone.jpg" alt="Surveillance Drone - Intelligence UAV system" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/8b5cf6/ffffff?text=Surveillance+Drone'">
                     <div class="project-slide-badge">Intelligence</div>
                   </div>
                   <div class="project-slide-info compact">
                     <h3>Surveillance Drone</h3>
                     <p class="project-description">Led the end-to-end development of surveillance UAV systems, from concept design and engineering analysis to manufacturing, integration, testing, and flight validation. Integrated advanced imaging and communication systems to enable real-time monitoring, intelligence gathering, and situational awareness. Ensured system reliability, performance optimization, and compliance with regulatory requirements for defense, industrial, and security applications.</p>
+<a class="view-more" href="pages/projects/surveillance-drone.html" aria-label="View more about Surveillance Drone">View More <span aria-hidden="true">→</span></a>
                   </div>
                 </div>
               </div>
@@ -444,12 +519,13 @@
               <div class="slider-slide">
                 <div class="project-slide-content compact">
                   <div class="project-slide-image compact">
-                    <img src="assets/images/landmine-drone.jpg" alt="Landmine Detection Drone" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=Landmine+Detection+Drone'">
+                    <img src="assets/images/landmine-drone.jpg" alt="Landmine Detection Drone - Sensor UAV system" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/ef4444/ffffff?text=Landmine+Detection+Drone'">
                     <div class="project-slide-badge">Sensor</div>
                   </div>
                   <div class="project-slide-info compact">
                     <h3>Landmine Detection Drone</h3>
                     <p class="project-description">Specialized UAV equipped with advanced sensor integration for landmine detection and mapping applications.</p>
+<a class="view-more" href="pages/projects/landmine-detection-drone.html" aria-label="View more about Landmine Detection Drone">View More <span aria-hidden="true">→</span></a>
                   </div>
                 </div>
               </div>
@@ -458,48 +534,25 @@
               <div class="slider-slide">
                 <div class="project-slide-content compact">
                   <div class="project-slide-image compact">
-                    <img src="assets/images/ambulance-aircraft.jpg" alt="Ambulance and Rescue Aircraft" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300?text=Ambulance+and+Rescue+Aircraft'">
+                    <img src="assets/images/ambulance-aircraft.jpg" alt="Ambulance and Rescue Aircraft - Medical UAV system" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/22d3ee/ffffff?text=Ambulance+and+Rescue+Aircraft'">
                     <div class="project-slide-badge">Medical</div>
                   </div>
                   <div class="project-slide-info compact">
                     <h3>Ambulance & Rescue Aircraft</h3>
                     <p class="project-description">Multidisciplinary design for emergency response and medical evacuation with integrated medical systems.</p>
+<a class="view-more" href="pages/projects/ambulance-and-rescue-aircraft.html" aria-label="View more about Ambulance & Rescue Aircraft">View More <span aria-hidden="true">→</span></a>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="slider-dots compact">
-              <span class="dot active" data-index="0"></span>
-              <span class="dot" data-index="1"></span>
-              <span class="dot" data-index="2"></span>
-              <span class="dot" data-index="3"></span>
-              <span class="dot" data-index="4"></span>
-              <span class="dot" data-index="5"></span>
-              <span class="dot" data-index="6"></span>
-              <span class="dot" data-index="7"></span>
-            </div>
-
-            <div class="slider-nav-unified">
-              <button class="slider-btn-unified prev" aria-label="Previous project">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <span class="slider-page-info">
-                <span class="current-slide-unified">1</span>
-                <span class="separator-unified">/</span>
-                <span class="total-slides-unified">8</span>
-              </span>
-              <button class="slider-btn-unified next" aria-label="Next project">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
-
-            <div class="slider-progress compact">
-              <div class="slider-progress-bar"></div>
-            </div>
           </div>
-        </div>
-      </div>
+
+          <div class="orbit-core" aria-hidden="true">
+            <span class="orbit-ring orbit-ring-a"></span>
+            <span class="orbit-ring orbit-ring-b"></span>
+            <span class="orbit-core-dot"></span>
+          </div>
+        </div>      </div>
     </section>
 
     <!-- Education Section -->
@@ -509,26 +562,47 @@
         <div class="section-subhead">Academic background, professional credentials, and intellectual property in aerospace engineering.</div>
         
         <div class="two-col-grid">
-          <div class="info-panel">
+          <div class="info-panel glass">
             <h3><i class="fas fa-graduation-cap"></i> Academic Qualifications</h3>
-            <div class="edu-item"><span class="edu-degree">M.E Aeronautical Engineering</span><br>Park College of Engineering and Technology, Coimbatore – 89.90%</div>
-            <div class="edu-item"><span class="edu-degree">B.E Aeronautical Engineering</span><br>Park College of Engineering and Technology, Coimbatore (2024) – 85.40%</div>
-            <div class="edu-item"><span class="edu-degree">Class XII</span><br>Alagappa Model Hr. Sec. School, Karaikudi – 70.60%</div>
-            <div class="edu-item"><span class="edu-degree">Class X</span><br>C.V.CT.V Meenakshi Achi Matriculation School – 81.09%</div>
+            <div class="edu-item">
+              <span class="edu-degree">M.E Aeronautical Engineering</span><br>
+              Park College of Engineering and Technology, Coimbatore – 89.90%
+            </div>
+            <div class="edu-item">
+              <span class="edu-degree">B.E Aeronautical Engineering</span><br>
+              Park College of Engineering and Technology, Coimbatore (2024) – 85.40%
+            </div>
+            <div class="edu-item">
+              <span class="edu-degree">Class XII</span><br>
+              Alagappa Model Hr. Sec. School, Karaikudi – 70.60%
+            </div>
+            <div class="edu-item">
+              <span class="edu-degree">Class X</span><br>
+              C.V.CT.V Meenakshi Achi Matriculation School – 81.09%
+            </div>
           </div>
           
-          <div class="info-panel">
+          <div class="info-panel glass">
             <h3><i class="fas fa-certificate"></i> Certifications</h3>
-            <div class="cert-item"><i class="fas fa-cube" style="color: var(--primary);"></i> <strong>Fusion 360</strong></div>
-            <div class="cert-item"><i class="fas fa-cube" style="color: var(--primary);"></i> <strong>SolidWorks</strong></div>
-            <div class="cert-item"><i class="fas fa-cube" style="color: var(--primary);"></i> <strong>DGCA Drone Pilot</strong></div>
+            <div class="cert-item">
+              <i class="fas fa-cube" style="color: var(--primary);"></i> 
+              <strong>Fusion 360</strong>
+            </div>
+            <div class="cert-item">
+              <i class="fas fa-cube" style="color: var(--primary);"></i> 
+              <strong>SolidWorks</strong>
+            </div>
+            <div class="cert-item">
+              <i class="fas fa-cube" style="color: var(--primary);"></i> 
+              <strong>DGCA Drone Pilot</strong>
+            </div>
             
-            <div style="margin-top: 28px; border-top: 1px solid var(--gray-border); padding-top: 24px;">
+            <div style="margin-top: 28px; border-top: 1px solid rgba(0, 0, 0, 0.06); padding-top: 24px;">
               <h3 style="font-size: 1.4rem; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, var(--primary), var(--accent)); background-clip: text; -webkit-background-clip: text; color: transparent;">
                 <i class="fas fa-gavel"></i> Patents
               </h3>
               
-              <div class="cert-item" style="border-bottom: 1px dashed var(--gray-border); padding-bottom: 12px; margin-bottom: 18px;">
+              <div class="cert-item" style="border-bottom: 1px dashed rgba(0, 0, 0, 0.06); padding-bottom: 12px; margin-bottom: 18px;">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
                   <i class="fas fa-check-circle" style="color: var(--green);"></i>
                   <strong>Gov UK Patent - Granted</strong>
@@ -549,29 +623,40 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
       <div class="container">
-        <div class="contact-wrapper-simple">
+        <div class="contact-wrapper-simple glass">
           <div class="contact-info-large">
             <h3>Let's innovate together</h3>
             <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 450px;">UAV design, certification or R&D collaboration — let's connect and build the future of autonomous flight.</p>
             <div class="contact-details-row">
-              <div class="contact-detail">
+              <div class="contact-detail glass">
                 <i class="fas fa-envelope"></i>
-                <div><strong>Email</strong><br><span id="email-display">Loading...</span></div>
+                <div>
+                  <strong>Email</strong><br>
+                  <span id="email-display">Loading...</span>
+                </div>
               </div>
-              <div class="contact-detail">
+              <div class="contact-detail glass">
                 <i class="fas fa-phone-alt"></i>
-                <div><strong>Phone</strong><br>+91 8531858271</div>
+                <div>
+                  <strong>Phone</strong><br>
+                  <a href="tel:+918531858271" style="color: var(--text-dark); text-decoration: none;">+91 8531858271</a>
+                </div>
               </div>
-              <div class="contact-detail">
+              <div class="contact-detail glass">
                 <i class="fab fa-linkedin"></i>
-                <div><strong>LinkedIn</strong><br>linkedin.com/in/pradhap-v</div>
+                <div>
+                  <strong>LinkedIn</strong><br>
+                  <a href="https://linkedin.com/in/pradhap-v" target="_blank" rel="noopener noreferrer" style="color: var(--text-dark); text-decoration: none;">linkedin.com/in/pradhap-v</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="contact-cta">
+          <div class="contact-cta glass">
             <p><i class="fas fa-paper-plane" style="color: var(--primary); font-size: 2rem; margin-bottom: 12px; display: inline-block;"></i></p>
             <p style="font-weight: 600;">Ready to discuss your next UAV project?</p>
-            <a href="mailto:veerapradhap2001@gmail.com" class="btn-primary" style="margin-top: 16px; display: inline-flex;"><i class="fas fa-envelope"></i> Send an email</a>
+            <a href="mailto:veerapradhap2001@gmail.com" class="btn-primary" style="margin-top: 16px; display: inline-flex;">
+              <i class="fas fa-envelope"></i> Send an email
+            </a>
           </div>
         </div>
       </div>
@@ -604,6 +689,7 @@
   </footer>
 
   <!-- Main JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
