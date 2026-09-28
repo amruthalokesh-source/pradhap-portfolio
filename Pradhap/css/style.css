@@ -2473,3 +2473,496 @@ html.skip-initial-loader #loader {
     padding-right: 16px;
   }
 }
+
+
+/* ===== WORK EXPERIENCE — CENTERED STACKED CARDS =====
+   Visual-only card layout. All existing content and section styling remain unchanged. */
+#experience .holographic-timeline {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: min(100%, 960px);
+  min-height: 820px;
+  margin: 42px auto 0;
+  padding: 0 0 90px;
+  box-sizing: border-box;
+  perspective: 1200px;
+}
+
+#experience .holographic-card {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  transform: none;
+  transform-origin: center center;
+  transition:
+    box-shadow 0.35s var(--transition-smooth),
+    filter 0.35s var(--transition-smooth),
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Centered layered stack — only the vertical starting position changes. */
+#experience .holographic-card:nth-child(1) {
+  top: 0;
+  z-index: 3;
+}
+
+#experience .holographic-card:nth-child(2) {
+  top: 105px;
+  z-index: 2;
+}
+
+#experience .holographic-card:nth-child(3) {
+  top: 210px;
+  z-index: 1;
+}
+
+/* Hovering any card brings that exact card to the front without moving it sideways. */
+#experience .holographic-card:hover {
+  z-index: 50 !important;
+  transform: none;
+  box-shadow:
+    0 24px 60px rgba(99, 102, 241, 0.18),
+    0 0 60px rgba(99, 102, 241, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+#experience .holographic-card:not(:hover) {
+  filter: saturate(0.94);
+}
+
+@media (max-width: 1024px) {
+  #experience .holographic-timeline {
+    width: min(100%, 900px);
+    min-height: 780px;
+  }
+
+  #experience .holographic-card:nth-child(2) { top: 115px; }
+  #experience .holographic-card:nth-child(3) { top: 230px; }
+}
+
+@media (max-width: 700px) {
+  #experience .holographic-timeline {
+    width: 100%;
+    min-height: 900px;
+    margin-top: 30px;
+    padding-bottom: 60px;
+  }
+
+  #experience .holographic-card {
+    width: calc(100% - 8px);
+    left: 4px;
+  }
+
+  #experience .holographic-card:nth-child(2) { top: 135px; }
+  #experience .holographic-card:nth-child(3) { top: 270px; }
+}
+
+@media (max-width: 480px) {
+  #experience .holographic-timeline {
+    min-height: 980px;
+  }
+
+  #experience .holographic-card:nth-child(2) { top: 150px; }
+  #experience .holographic-card:nth-child(3) { top: 300px; }
+}
+
+/* ===== WORK EXPERIENCE — THREE-CARD STAGGERED LAYOUT ===== */
+#experience .holographic-timeline {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: min(100%, 1120px);
+  height: 760px;
+  min-height: 0;
+  margin: 18px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  perspective: 1200px;
+}
+
+#experience .holographic-card {
+  position: absolute;
+  top: 0;
+  width: 68%;
+  max-width: none;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 28px 34px;
+  box-sizing: border-box;
+  transform: none !important;
+  transform-origin: center center;
+  transition:
+    left 0.35s var(--transition-smooth),
+    top 0.35s var(--transition-smooth),
+    width 0.35s var(--transition-smooth),
+    box-shadow 0.35s var(--transition-smooth),
+    filter 0.35s var(--transition-smooth),
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Right card */
+#experience .holographic-card:nth-child(1) {
+  left: 32%;
+  top: 0;
+  z-index: 1;
+}
+
+/* Left card */
+#experience .holographic-card:nth-child(2) {
+  left: 0;
+  top: 72px;
+  z-index: 2;
+}
+
+/* Center card */
+#experience .holographic-card:nth-child(3) {
+  left: 16%;
+  top: 144px;
+  z-index: 3;
+}
+
+/* The hovered card becomes fully visible and wider without changing its anchor position. */
+#experience .holographic-card:hover {
+  z-index: 100 !important;
+  width: 78%;
+  transform: none !important;
+  filter: none;
+  box-shadow:
+    0 24px 60px rgba(99, 102, 241, 0.18),
+    0 0 60px rgba(99, 102, 241, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Remove artificial vertical space; card height is determined only by its content. */
+#experience .holographic-card-inner {
+  height: auto;
+  min-height: 0;
+}
+
+#experience .timeline-desc {
+  margin-bottom: 10px;
+}
+
+#experience .milestone {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  #experience .holographic-timeline {
+    width: min(100%, 940px);
+    height: 760px;
+  }
+
+  #experience .holographic-card {
+    width: 72%;
+    padding: 26px 30px;
+  }
+
+  #experience .holographic-card:nth-child(1) { left: 28%; }
+  #experience .holographic-card:nth-child(2) { left: 0; top: 70px; }
+  #experience .holographic-card:nth-child(3) { left: 14%; top: 140px; }
+
+  #experience .holographic-card:hover { width: 82%; }
+}
+
+@media (max-width: 700px) {
+  #experience .holographic-timeline {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-top: 20px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  #experience .holographic-card,
+  #experience .holographic-card:nth-child(1),
+  #experience .holographic-card:nth-child(2),
+  #experience .holographic-card:nth-child(3) {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    padding: 24px 20px;
+  }
+
+  #experience .holographic-card:hover {
+    width: 100%;
+  }
+}
+
+/* ===== WORK EXPERIENCE — FINAL HORIZONTAL SPREAD ===== */
+#experience .holographic-timeline {
+  width: min(100%, 1216px);
+  height: 820px;
+  min-height: 0;
+  margin: 18px auto 0;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+#experience .holographic-card {
+  width: 58%;
+  min-height: 0;
+  height: auto;
+  padding: 28px 34px;
+  box-sizing: border-box;
+  border: 2px solid rgba(99, 102, 241, 0.28);
+  border-top-color: rgba(255, 255, 255, 0.75);
+  border-left-color: rgba(255, 255, 255, 0.55);
+  border-radius: 32px;
+  transform: none !important;
+}
+
+/* Left and right cards are deliberately on the same horizontal level. */
+#experience .holographic-card:nth-child(1) {
+  left: 46%;
+  top: 0;
+  z-index: 2;
+}
+
+#experience .holographic-card:nth-child(2) {
+  left: -6%;
+  top: 0;
+  z-index: 2;
+}
+
+/* Center card sits between them and slightly lower, while remaining visible. */
+#experience .holographic-card:nth-child(3) {
+  left: 21%;
+  top: 92px;
+  z-index: 3;
+}
+
+/* Hover: expand in the card's own position and bring it completely forward. */
+#experience .holographic-card:hover {
+  width: 66%;
+  transform: none !important;
+  z-index: 100 !important;
+  border-color: rgba(99, 102, 241, 0.55);
+}
+
+#experience .holographic-card-inner {
+  height: auto;
+  min-height: 0;
+}
+
+@media (max-width: 1100px) {
+  #experience .holographic-timeline {
+    width: 100%;
+  }
+
+  #experience .holographic-card {
+    width: 60%;
+  }
+
+  #experience .holographic-card:nth-child(1) { left: 43%; }
+  #experience .holographic-card:nth-child(2) { left: -3%; }
+  #experience .holographic-card:nth-child(3) { left: 20%; top: 88px; }
+
+  #experience .holographic-card:hover { width: 68%; }
+}
+
+@media (max-width: 700px) {
+  #experience .holographic-timeline {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    overflow: visible;
+  }
+
+  #experience .holographic-card,
+  #experience .holographic-card:nth-child(1),
+  #experience .holographic-card:nth-child(2),
+  #experience .holographic-card:nth-child(3) {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    padding: 24px 20px;
+  }
+
+  #experience .holographic-card:hover {
+    width: 100%;
+  }
+}
+
+/* ===== WORK EXPERIENCE — FINAL POSITION SWAP =====
+   Card 2 -> RIGHT, Card 3 -> CENTER, Card 1 -> LEFT.
+   Borders remain visible at all times; hover only changes stacking/width. */
+#experience .holographic-card {
+  border: 2px solid rgba(99, 102, 241, 0.55) !important;
+  z-index: 1;
+}
+
+/* Current Card 1: move from RIGHT to LEFT */
+#experience .holographic-card:nth-child(1) {
+  left: -8%;
+  top: 0;
+  z-index: 2;
+}
+
+/* Current Card 2: move from LEFT to RIGHT */
+#experience .holographic-card:nth-child(2) {
+  left: 50%;
+  top: 0;
+  z-index: 2;
+}
+
+/* Current Card 3: move from CENTER/LOWER to CENTER */
+#experience .holographic-card:nth-child(3) {
+  left: 21%;
+  top: 92px;
+  z-index: 3;
+}
+
+/* Hovered card is fully visible in its own position. */
+#experience .holographic-card:hover {
+  width: 66%;
+  z-index: 100 !important;
+  border: 2px solid rgba(99, 102, 241, 0.85) !important;
+  transform: none !important;
+}
+
+@media (max-width: 1100px) and (min-width: 701px) {
+  #experience .holographic-card:nth-child(1) { left: -3%; top: 0; }
+  #experience .holographic-card:nth-child(2) { left: 43%; top: 0; }
+  #experience .holographic-card:nth-child(3) { left: 20%; top: 88px; }
+}
+
+/* ===== WORK EXPERIENCE — FINAL REQUESTED ARRANGEMENT =====
+   Card order/positions:
+   - Card 3 (previous middle) -> LEFT
+   - Card 1 (previous left)   -> CENTER
+   - Card 2 (previous right)  -> RIGHT
+   Left and right cards share the same bottom edge. */
+#experience .holographic-timeline {
+  width: min(100%, 1216px);
+  height: 620px;
+  margin: 18px auto 0;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+}
+
+#experience .holographic-card {
+  width: 58%;
+  height: auto;
+  min-height: 0;
+  border: 2px solid rgba(99, 102, 241, 0.55) !important;
+  box-sizing: border-box;
+  transform: none !important;
+}
+
+/* Previous middle -> LEFT. Bottom aligned with the right card. */
+#experience .holographic-card:nth-child(3) {
+  left: -8%;
+  top: auto;
+  bottom: 0;
+  z-index: 2;
+}
+
+/* Previous left -> CENTER. Raised above the bottom-aligned pair. */
+#experience .holographic-card:nth-child(1) {
+  left: 21%;
+  top: auto;
+  bottom: 92px;
+  z-index: 3;
+}
+
+/* Previous right -> RIGHT. Bottom aligned with the left card. */
+#experience .holographic-card:nth-child(2) {
+  left: 50%;
+  top: auto;
+  bottom: 0;
+  z-index: 2;
+}
+
+/* Every border remains visible without hover. Hover only brings the selected card forward and widens it. */
+#experience .holographic-card:hover {
+  width: 66%;
+  z-index: 100 !important;
+  border: 2px solid rgba(99, 102, 241, 0.9) !important;
+  transform: none !important;
+}
+
+@media (max-width: 1100px) and (min-width: 701px) {
+  #experience .holographic-timeline {
+    height: 620px;
+  }
+  #experience .holographic-card {
+    width: 60%;
+  }
+  #experience .holographic-card:nth-child(3) { left: -3%; bottom: 0; top: auto; }
+  #experience .holographic-card:nth-child(1) { left: 20%; bottom: 88px; top: auto; }
+  #experience .holographic-card:nth-child(2) { left: 43%; bottom: 0; top: auto; }
+  #experience .holographic-card:hover { width: 68%; }
+}
+
+@media (max-width: 700px) {
+  #experience .holographic-timeline {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  #experience .holographic-card,
+  #experience .holographic-card:nth-child(1),
+  #experience .holographic-card:nth-child(2),
+  #experience .holographic-card:nth-child(3) {
+    position: relative;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+  }
+  #experience .holographic-card:hover { width: 100%; }
+}
+
+/* ===== WORK EXPERIENCE — POSITION + RIGHT HOVER FIX =====
+   Left and right cards raised slightly; center card lowered slightly.
+   Right card expands inward on hover so its content never gets clipped. */
+#experience .holographic-card:nth-child(3),
+#experience .holographic-card:nth-child(2) {
+  bottom: 28px;
+}
+
+#experience .holographic-card:nth-child(1) {
+  /* Center card intentionally sits noticeably lower than the left/right cards. */
+  bottom: 0;
+}
+
+/* Keep the right card's hover expansion inside the viewport. */
+#experience .holographic-card:nth-child(2):hover {
+  left: 42% !important;
+  width: 66% !important;
+  z-index: 100 !important;
+}
+
+@media (max-width: 1100px) and (min-width: 701px) {
+  #experience .holographic-card:nth-child(3),
+  #experience .holographic-card:nth-child(2) {
+    bottom: 22px;
+  }
+  #experience .holographic-card:nth-child(1) {
+    /* Center card intentionally sits noticeably lower than the left/right cards. */
+    bottom: 0;
+  }
+  #experience .holographic-card:nth-child(2):hover {
+    left: 34% !important;
+    width: 68% !important;
+  }
+}
