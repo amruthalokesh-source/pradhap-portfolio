@@ -32,7 +32,6 @@
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-  <script>if (window.location.hash === '#projects') document.documentElement.classList.add('skip-initial-loader');</script>
   
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -65,19 +64,7 @@
   }
   </script>
 </head>
-<body class="is-loading">
-  <script>if (document.documentElement.classList.contains('skip-initial-loader')) document.body.classList.remove('is-loading');</script>
-  <!-- 3D Drone Loading Experience -->
-  <div id="loader" role="status" aria-label="Loading portfolio">
-    <div class="loader-aura" aria-hidden="true"></div>
-    <canvas id="drone-loader-canvas" aria-hidden="true"></canvas>
-    <div class="loader-overlay-copy">
-      <span class="loader-kicker">AEROSPACE SYSTEMS</span>
-      <span class="loader-status">INITIALIZING FLIGHT SYSTEMS</span>
-      <span class="loader-progress" aria-hidden="true"><span></span></span>
-    </div>
-    <noscript>Loading portfolio…</noscript>
-  </div>
+<body>
 
   <!-- Skip to Content Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -142,13 +129,25 @@
         </div>
       </div>
       <div class="container hero-skills">
-        <div class="skills-grid">
-          <div class="skill-card"><i class="fas fa-cube"></i> SolidWorks / Fusion 360</div>
-          <div class="skill-card"><i class="fas fa-chart-bar"></i> Ansys</div>
-          <div class="skill-card"><i class="fas fa-bullhorn"></i> Business Development</div>
-          <div class="skill-card"><i class="fas fa-check-double"></i> DGCA Type Certification</div>
-          <div class="skill-card"><i class="fas fa-rocket"></i> Prototype & Product Development</div>
-          <div class="skill-card"><i class="fas fa-microchip"></i> End to End Product Development & Strategic Analysis</div>
+        <div class="skills-marquee" aria-label="Skills and expertise">
+          <div class="skills-marquee-track">
+            <div class="skills-marquee-group">
+              <div class="skill-card"><i class="fas fa-cube"></i> SolidWorks / Fusion 360</div>
+              <div class="skill-card"><i class="fas fa-chart-bar"></i> Ansys</div>
+              <div class="skill-card"><i class="fas fa-bullhorn"></i> Business Development</div>
+              <div class="skill-card"><i class="fas fa-check-double"></i> DGCA Type Certification</div>
+              <div class="skill-card"><i class="fas fa-rocket"></i> Prototype &amp; Product Development</div>
+              <div class="skill-card"><i class="fas fa-microchip"></i> End to End Product Development &amp; Strategic Analysis</div>
+            </div>
+            <div class="skills-marquee-group" aria-hidden="true">
+              <div class="skill-card"><i class="fas fa-cube"></i> SolidWorks / Fusion 360</div>
+              <div class="skill-card"><i class="fas fa-chart-bar"></i> Ansys</div>
+              <div class="skill-card"><i class="fas fa-bullhorn"></i> Business Development</div>
+              <div class="skill-card"><i class="fas fa-check-double"></i> DGCA Type Certification</div>
+              <div class="skill-card"><i class="fas fa-rocket"></i> Prototype &amp; Product Development</div>
+              <div class="skill-card"><i class="fas fa-microchip"></i> End to End Product Development &amp; Strategic Analysis</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -322,7 +321,7 @@
                 <div class="internship-visual">
                   <div class="visual-content">
                     <div class="visual-icon">
-                      <i class="fas fa-drone"></i>
+                      <i class="fas fa-plane" aria-hidden="true"></i>
                     </div>
                     <div class="visual-details">
                       <span class="visual-label">UAV Design</span>
