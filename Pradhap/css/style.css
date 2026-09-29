@@ -3268,3 +3268,382 @@ html.skip-initial-loader #loader {
     margin-top: 0;
   }
 }
+
+/* =========================================================
+   CINEMATIC TRANSPARENT OVERLAY — ALL PORTFOLIO SECTIONS
+   Keeps the fixed hero video visible behind every major section
+   while adding the same readable dark-glass treatment used in About.
+   ========================================================= */
+
+/* Let the fixed hero video continue behind the page sections. */
+#about,
+#experience,
+#internships,
+#projects,
+#education,
+#contact {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: transparent !important;
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 0;
+  z-index: 1;
+}
+
+/* Shared cinematic overlay. */
+#about::before,
+#experience::before,
+#internships::before,
+#projects::before,
+#education::before,
+#contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg,
+      rgba(3, 9, 20, .68) 0%,
+      rgba(3, 9, 20, .48) 50%,
+      rgba(3, 9, 20, .32) 100%),
+    linear-gradient(180deg,
+      rgba(3, 9, 20, .22) 0%,
+      rgba(3, 9, 20, .12) 52%,
+      rgba(3, 9, 20, .42) 100%);
+}
+
+/* Subtle blue glow to match the hero/About visual language. */
+#about::after,
+#experience::after,
+#internships::after,
+#projects::after,
+#education::after,
+#contact::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 80% 25%, rgba(99,102,241,.14), transparent 36%);
+}
+
+/* Keep section content above the overlay. */
+#about > .container,
+#experience > .container,
+#internships > .container,
+#projects > .container,
+#education > .container,
+#contact > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* White typography for sections that previously used light backgrounds. */
+#experience .section-title,
+#internships .section-title,
+#projects .section-title,
+#education .section-title,
+#contact .section-title,
+#experience .section-subhead,
+#internships .section-subhead,
+#projects .section-subhead,
+#education .section-subhead,
+#contact .section-subhead {
+  color: #fff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.45);
+}
+
+#experience .section-subhead,
+#internships .section-subhead,
+#projects .section-subhead,
+#education .section-subhead,
+#contact .section-subhead {
+  border-left-color: rgba(255,255,255,.72);
+}
+
+/* Remove the old About-only image so the same video-backed look is used. */
+#about {
+  background-image: none !important;
+  background-attachment: scroll;
+}
+
+/* Preserve the full-screen visual treatment of Key Projects. */
+#projects {
+  background-color: transparent !important;
+}
+
+/* Keep the content/cards readable while retaining their existing layouts. */
+#experience .holographic-card,
+#internships .internship-card,
+#education .glass,
+#contact .contact-wrapper-simple {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@media (max-width: 850px) {
+  #about,
+  #experience,
+  #internships,
+  #projects,
+  #education,
+  #contact {
+    background-attachment: scroll;
+  }
+}
+
+/* =========================================================
+   FINAL CINEMATIC HERO OVERLAY
+   Matches the dark transparent treatment used by the other sections.
+   ========================================================= */
+.hero {
+  isolation: isolate;
+  background:
+    linear-gradient(90deg,
+      rgba(3, 9, 20, .70) 0%,
+      rgba(3, 9, 20, .50) 50%,
+      rgba(3, 9, 20, .34) 100%),
+    linear-gradient(180deg,
+      rgba(3, 9, 20, .18) 0%,
+      rgba(3, 9, 20, .10) 52%,
+      rgba(3, 9, 20, .40) 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  top: 0;
+  right: auto;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 78% 40%, rgba(99,102,241,.16), transparent 34%),
+    linear-gradient(90deg, rgba(3,9,20,.16), transparent 62%);
+  pointer-events: none;
+  z-index: 0;
+  animation: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 65%, rgba(3,9,20,.22) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep hero content above both overlay layers. */
+.hero .hero-grid,
+.hero .hero-skills {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   INTERNSHIP FLIP-CARD FIX
+   Chrome/WebKit can hide the reverse face when backdrop-filter,
+   overflow scrolling and 3D transforms are combined. Keep the
+   flip faces as clean 3D layers and put the glass effect in their
+   backgrounds instead.
+   ========================================================= */
+.internship-card.redesigned {
+  position: relative;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  overflow: visible;
+}
+
+.internship-card-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.internship-card-front.redesigned,
+.internship-card-back.redesigned {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  overflow: hidden;
+}
+
+.internship-card-front.redesigned {
+  z-index: 2;
+  background: rgba(8, 15, 30, .62);
+  border-color: rgba(255,255,255,.20);
+  box-shadow: 0 16px 45px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+.internship-card-back.redesigned {
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(12,20,40,.96), rgba(30,25,58,.94));
+  border-color: rgba(255,255,255,.24);
+  box-shadow: 0 16px 50px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.12);
+  color: #fff;
+  overflow: hidden;
+}
+
+.internship-card-back.redesigned .back-title,
+.internship-card-back.redesigned .internship-description {
+  color: rgba(255,255,255,.94);
+  text-shadow: 0 1px 5px rgba(0,0,0,.30);
+}
+
+.internship-card-back.redesigned .back-title {
+  color: #fff;
+}
+
+.internship-card-back.redesigned .back-skills span {
+  color: rgba(255,255,255,.90);
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.16);
+}
+
+.internship-card-back.redesigned .back-skills span:hover {
+  color: #fff;
+  background: rgba(99,102,241,.22);
+  border-color: rgba(255,255,255,.30);
+}
+
+.internship-card-back.redesigned .back-badge {
+  color: #dbe4ff;
+  background: rgba(99,102,241,.20);
+  border-color: rgba(255,255,255,.14);
+}
+
+/* Don't let the generic glass hover rule interfere with the 3D flip. */
+.internship-card.redesigned:hover .internship-card-front.redesigned,
+.internship-card.redesigned:hover .internship-card-back.redesigned {
+  transform-style: preserve-3d;
+}
+
+@media (max-width: 768px) {
+  .internship-card-back.redesigned {
+    overflow: hidden;
+  }
+}
+
+/* =========================================================
+   FINAL HERO OVERLAY + INTERNSHIP CARD COLOR MATCH
+   ========================================================= */
+
+/* Hero: use the same visible dark transparent cinematic layer
+   as the other sections, while keeping the video clearly visible. */
+.hero {
+  background: transparent !important;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(90deg,
+      rgba(3, 9, 20, .68) 0%,
+      rgba(3, 9, 20, .48) 50%,
+      rgba(3, 9, 20, .32) 100%),
+    linear-gradient(180deg,
+      rgba(3, 9, 20, .22) 0%,
+      rgba(3, 9, 20, .12) 52%,
+      rgba(3, 9, 20, .42) 100%) !important;
+  border-radius: 0 !important;
+  animation: none !important;
+}
+
+.hero::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background: radial-gradient(circle at 78% 25%, rgba(99,102,241,.14), transparent 38%) !important;
+}
+
+.hero .hero-grid,
+.hero .hero-skills {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* Internships: match the Education / Certifications card color.
+   Both faces use the same light translucent glass appearance. */
+.internship-card-front.redesigned,
+.internship-card-back.redesigned {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-top: 1px solid var(--glass-highlight) !important;
+  border-left: 1px solid rgba(255,255,255,.30) !important;
+  box-shadow:
+    var(--shadow-glass),
+    0 4px 16px rgba(0,0,0,.04),
+    inset 0 1px 0 rgba(255,255,255,.70) !important;
+  color: var(--text-dark) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+}
+
+/* Keep the reverse face readable after the 180-degree flip. */
+.internship-card-back.redesigned .back-title,
+.internship-card-back.redesigned .internship-description {
+  color: var(--text-dark) !important;
+  text-shadow: none !important;
+}
+
+.internship-card-back.redesigned .back-badge {
+  color: var(--primary) !important;
+  background: rgba(99,102,241,.10) !important;
+  border-color: rgba(99,102,241,.12) !important;
+}
+
+.internship-card-back.redesigned .back-skills span {
+  color: var(--text-muted) !important;
+  background: rgba(0,0,0,.04) !important;
+  border-color: rgba(0,0,0,.06) !important;
+}
+
+.internship-card-back.redesigned .back-skills span:hover {
+  color: var(--primary) !important;
+  background: rgba(99,102,241,.10) !important;
+  border-color: rgba(99,102,241,.18) !important;
+}
+
+/* Prevent the generic .glass:hover transform from fighting the 3D flip. */
+.internship-card.redesigned:hover .internship-card-front.redesigned {
+  transform: rotateY(0deg) !important;
+}
+
+.internship-card.redesigned:hover .internship-card-back.redesigned {
+  transform: rotateY(180deg) !important;
+}
+
+/* Match the normal-face typography to the Education cards. */
+.internship-card-front.redesigned .internship-title {
+  color: var(--text-dark) !important;
+}
+
+.internship-card-front.redesigned .internship-company,
+.internship-card-front.redesigned .visual-sub {
+  color: var(--text-muted) !important;
+}
+
+.internship-card-front.redesigned .visual-label,
+.internship-card-front.redesigned .percentage {
+  color: var(--text-dark) !important;
+}
