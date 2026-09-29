@@ -3608,3 +3608,252 @@ body::before {
     padding: 12px 16px;
   }
 }
+
+
+/* =========================================================
+   CONSISTENT ILLUMINATED BUTTON LANGUAGE
+   Work Experience + Hero marquee use the same visual language
+   as the Connect with me button.
+   ========================================================= */
+.hero .hero-content .btn-primary,
+.hero .hero-content .btn-primary:visited {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25), 0 0 30px rgba(99, 102, 241, 0.05);
+}
+
+.hero .hero-content .btn-primary:hover {
+  color: #fff;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.35), 0 0 50px rgba(99, 102, 241, 0.10);
+}
+
+/* Each scrolling expertise pill matches Connect with me. */
+.hero-skills .skill-card {
+  color: #fff !important;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+  border: 0 !important;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25), 0 0 30px rgba(99, 102, 241, 0.05) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  font-weight: 600;
+  transition: transform 0.3s var(--transition-smooth), box-shadow 0.3s var(--transition-smooth), filter 0.3s var(--transition-smooth);
+}
+
+.hero-skills .skill-card i {
+  color: #fff !important;
+}
+
+.hero-skills .skill-card:hover {
+  color: #fff !important;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+  border-color: transparent !important;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.35), 0 0 50px rgba(99, 102, 241, 0.10) !important;
+  filter: brightness(1.06);
+}
+
+/* Navigation links styled like the Download CV button. */
+.navbar .nav-links {
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .nav-links a,
+.navbar .nav-links a:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 18px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--primary) !important;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid var(--primary);
+  box-shadow: none;
+  text-shadow: none;
+  transition: all 0.3s var(--transition-smooth);
+  position: relative;
+}
+
+.navbar .nav-links a::after {
+  display: none;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+  color: #fff !important;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-color: var(--primary);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25), 0 0 30px rgba(99, 102, 241, 0.05);
+}
+
+/* Keep the mobile navigation button-like too, without forcing the desktop layout. */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .navbar .nav-links a,
+  .navbar .nav-links a:visited {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* =========================================================
+   FINAL HERO REFINEMENTS
+   ========================================================= */
+
+/* Match the About goal/stat cards to the Education, Certifications & Patents cards. */
+#about .about-highlight,
+#about .stat-card {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-top: 1px solid var(--glass-highlight) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow:
+    var(--shadow-glass),
+    0 4px 16px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+}
+
+#about .about-highlight {
+  color: var(--text-dark) !important;
+}
+
+#about .stat-card {
+  color: var(--text-dark) !important;
+}
+
+#about .stat-card small {
+  color: var(--text-muted) !important;
+}
+
+/* Lift the Hero content slightly without changing the existing Hero overlay/background. */
+.hero .hero-content {
+  transform: translateY(-38px);
+}
+
+/* Scrolling expertise pills: match the navigation-button appearance exactly. */
+.hero-skills .skill-card,
+.hero-skills .skill-card:visited {
+  color: var(--primary) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 2px solid var(--primary) !important;
+  border-radius: 40px !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  font-weight: 600;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.hero-skills .skill-card i {
+  color: var(--primary) !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+.hero-skills .skill-card:hover {
+  color: #fff !important;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25), 0 0 30px rgba(99, 102, 241, 0.05) !important;
+}
+
+.hero-skills .skill-card:hover i {
+  color: #fff !important;
+}
+
+@media (max-width: 850px) {
+  .hero .hero-content {
+    transform: translateY(-22px);
+  }
+}
+
+/* =========================================================
+   HERO GOAL / STATS — VISIBLE HOLOGRAPHIC GLOW
+   Match the Education / Certifications card lighting exactly.
+   ========================================================= */
+#about .about-highlight,
+#about .stat-card {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate;
+  box-shadow:
+    0 12px 40px rgba(99, 102, 241, 0.16),
+    0 0 34px rgba(99, 102, 241, 0.10),
+    0 4px 16px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+}
+
+/* Always-visible illuminated border, rather than only on hover. */
+#about .about-highlight::before,
+#about .stat-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    rgba(99, 102, 241, 0.55),
+    rgba(236, 72, 153, 0.38),
+    rgba(6, 182, 212, 0.38),
+    rgba(245, 158, 11, 0.30),
+    rgba(99, 102, 241, 0.55)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.78;
+  animation: rotateBorder 6s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Soft light bloom inside the cards. */
+#about .about-highlight::after,
+#about .stat-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at 15% 10%,
+    rgba(99, 102, 241, 0.18),
+    transparent 48%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+#about .about-highlight > *,
+#about .stat-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+#about .about-highlight:hover,
+#about .stat-card:hover {
+  box-shadow:
+    0 24px 60px rgba(99, 102, 241, 0.20),
+    0 0 60px rgba(99, 102, 241, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.90) !important;
+}
+
+#about .about-highlight:hover::before,
+#about .stat-card:hover::before {
+  opacity: 1;
+}
