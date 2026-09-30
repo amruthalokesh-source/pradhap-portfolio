@@ -3040,7 +3040,7 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(3, 9, 20, .70) 0%, rgba(3, 9, 20, .42) 46%, rgba(3, 9, 20, .18) 100%),
+    linear-gradient(90deg, rgba(3, 9, 20, .70) 0%, rgba(0, 0, 0, .42) 46%, rgba(3, 9, 20, .18) 100%),
     linear-gradient(180deg, rgba(3, 9, 20, .18) 0%, rgba(3, 9, 20, .10) 60%, rgba(3, 9, 20, .34) 100%);
 }
 
@@ -3183,13 +3183,13 @@ body::before {
   pointer-events: none;
   background:
     linear-gradient(90deg,
-      rgba(3, 9, 20, .68) 0%,
-      rgba(3, 9, 20, .48) 50%,
-      rgba(3, 9, 20, .32) 100%),
+      rgba(0, 0, 0, .68) 0%,
+      rgba(0, 0, 0, .48) 50%,
+      rgba(0, 0, 0, .32) 100%),
     linear-gradient(180deg,
-      rgba(3, 9, 20, .22) 0%,
-      rgba(3, 9, 20, .12) 52%,
-      rgba(3, 9, 20, .42) 100%);
+      rgba(0, 0, 0, .22) 0%,
+      rgba(0, 0, 0, .12) 52%,
+      rgba(0, 0, 0, .42) 100%);
 }
 
 /* Subtle blue glow to match the hero/About visual language. */
@@ -3433,13 +3433,13 @@ body::before {
   pointer-events: none !important;
   background:
     linear-gradient(90deg,
-      rgba(3, 9, 20, .68) 0%,
-      rgba(3, 9, 20, .48) 50%,
-      rgba(3, 9, 20, .32) 100%),
+      rgba(0, 0, 0, .68) 0%,
+      rgba(0, 0, 0, .48) 50%,
+      rgba(0, 0, 0, .32) 100%),
     linear-gradient(180deg,
-      rgba(3, 9, 20, .22) 0%,
-      rgba(3, 9, 20, .12) 52%,
-      rgba(3, 9, 20, .42) 100%) !important;
+      rgba(0, 0, 0, .22) 0%,
+      rgba(0, 0, 0, .12) 52%,
+      rgba(0, 0, 0, .42) 100%) !important;
   border-radius: 0 !important;
   animation: none !important;
 }
@@ -3856,4 +3856,94 @@ body::before {
 #about .about-highlight:hover::before,
 #about .stat-card:hover::before {
   opacity: 1;
+}
+
+
+/* =========================================================
+   GLOBAL BLACK TRANSPARENT OVERLAY — ALL PORTFOLIO SECTIONS
+   Keeps existing content/effects above a consistent black layer.
+   ========================================================= */
+#skills {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+#skills::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg,
+      rgba(0, 0, 0, .68) 0%,
+      rgba(0, 0, 0, .48) 50%,
+      rgba(0, 0, 0, .32) 100%),
+    linear-gradient(180deg,
+      rgba(0, 0, 0, .22) 0%,
+      rgba(0, 0, 0, .12) 52%,
+      rgba(0, 0, 0, .42) 100%);
+}
+
+#skills > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure every main content section uses true black rather than blue-black. */
+#about::before,
+#experience::before,
+#internships::before,
+#projects::before,
+#education::before,
+#contact::before {
+  background:
+    linear-gradient(90deg,
+      rgba(0, 0, 0, .68) 0%,
+      rgba(0, 0, 0, .48) 50%,
+      rgba(0, 0, 0, .32) 100%),
+    linear-gradient(180deg,
+      rgba(0, 0, 0, .22) 0%,
+      rgba(0, 0, 0, .12) 52%,
+      rgba(0, 0, 0, .42) 100%);
+}
+
+/* Hero: true black transparent overlay while preserving the existing glow layer. */
+.hero::before {
+  background:
+    linear-gradient(90deg,
+      rgba(0, 0, 0, .68) 0%,
+      rgba(0, 0, 0, .48) 50%,
+      rgba(0, 0, 0, .32) 100%),
+    linear-gradient(180deg,
+      rgba(0, 0, 0, .22) 0%,
+      rgba(0, 0, 0, .12) 52%,
+      rgba(0, 0, 0, .42) 100%) !important;
+}
+
+
+/* ===== ABOUT SCROLL ANIMATION ===== */
+#about .about-stats .stat-card,
+#about .about-text > p {
+  will-change: transform, opacity;
+}
+
+/* Anime.js wraps each paragraph line; clip the reveal so complete lines slide up cleanly. */
+#about .about-text > p .line {
+  display: block;
+  overflow: hidden;
+}
+
+#about .about-text > p .line > * {
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #about .about-stats .stat-card,
+  #about .about-text > p,
+  #about .about-text > p .line {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
